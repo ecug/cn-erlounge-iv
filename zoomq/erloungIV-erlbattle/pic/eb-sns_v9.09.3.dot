@@ -1,0 +1,76 @@
+digraph G {
+/*图片生成命令:: need:: apt-get install graphviz-cairo
+$ dot -Tpng:cairo eb-sns_v9.09.3.dot -o eb-sns.png -Tcmapx -o eb-sns.map
+        size="30,30",
+*/
+    graph [label="EB:恶狼战役SNS图谱 by ZQ[091009 21:17]",
+        labeljust="l",labelloc="t",
+        fontsize=12.0,
+        fontname="VeraSansYuanTi-Regular.ttf",        
+        center=1,
+        ranksep=0.7,
+        ratio=compress,
+        rankdir=TB,
+        ];
+
+    node[fontsize=11.0,
+        style=filled,fillcolor=snow,
+        color=darkolivegreen,fontcolor=darkolivegreen,
+        height=0.3,
+        shape=plaintext,
+        ];
+    /*dir=both,color=yellowgreen,*/
+    edge [fontsize=10.0,
+        fontcolor=darkolivegreen,
+        color=gray30,
+		arrowhead=vee,
+		arrowtail=vee,
+        ];
+
+    /*图元声明
+    */
+    ebpsite     [label="EB:工程空间",shape=component,URL="http://code.google.com/p/erlbattle/"];
+        ebpwiki     [label="EB:工程维基",shape=component,URL="http://code.google.com/p/erlbattle/wiki/EbIndex"];
+        ebpsvn      [label="EB:版本仓库",shape=component,URL="http://erlbattle.googlecode.com/svn/trunk/LovelyPython/"];
+        ebpissue    [label="EB:提案追踪",shape=component,URL="http://code.google.com/p/erlbattle/issues/list"];
+        ebpdload    [label="EB:下载资源",shape=component,URL="http://code.google.com/p/erlbattle/downloads/list"];
+        
+    ebpml        [label="EB:邮件列表",shape=component,URL="http://groups.google.com/group/erlbattle"];
+    ggerlc       [label="erlang-china",shape=component,URL="http://groups.google.com/group/openbookproject"];
+    ggecug       [label="ECUG",shape=component,URL="http://groups.google.com/group/ecug"];
+
+    corer       [label="核心成员",shape=egg];
+    player      [label="玩家",shape=egg];
+    visitor     [label="旁观者",shape=egg];
+
+    /*流程关系
+    */
+
+    corer->ebpsite      [label="创立/管理",color=green];
+        corer->ebpsvn      [label="学习代码",color=green];
+        player->ebpissue    [label="投述建议",color=green];
+        corer->ebpwiki     [label="决议/知识",color=green];
+        corer->ebpml     [label="社区决策",color=green];
+        corer->ggerlc    [label="开发沟通",color=green];
+        corer->ggecug    [label="开发沟通",color=green];
+    player->ggerlc    [label="开发学习",color=green];
+        player->ggecug    [label="开发学习",color=green];
+    visitor->ebpsite      [label="路过",color=green];
+        visitor->ebpdload      [label="下载",color=green];
+        visitor->ggerlc    [label="旁观",color=green];
+        visitor->ggecug    [label="旁观",color=green];
+    
+    subgraph clusterG {
+        label="Google 提供的服务s"; color=blue;fontcolor=blue;
+        ebpsite->ebpwiki    [label=""];
+            ebpsite->ebpsvn     [label=""];
+            ebpsite->ebpissue   [label=""];
+            ebpsite->ebpml      [label=""];
+            ebpsite->ebpdload;
+        ebpsvn->ebpml       [label="自动通告"];
+        ebpissue->ebpml     [label="自动通告"];
+        ggecug;
+        ggerlc;
+      }
+}
+

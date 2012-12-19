@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" href="http://code.google.com/p/erlbattle/" title="EB:工程空间" alt="" coords="256,88,357,118"/>
+<area shape="rect" href="http://code.google.com/p/erlbattle/wiki/EbIndex" title="EB:工程维基" alt="" coords="27,187,128,216"/>
+<area shape="rect" href="http://erlbattle.googlecode.com/svn/trunk/LovelyPython/" title="EB:版本仓库" alt="" coords="152,187,253,216"/>
+<area shape="rect" href="http://code.google.com/p/erlbattle/issues/list" title="EB:提案追踪" alt="" coords="277,187,379,216"/>
+<area shape="rect" href="http://groups.google.com/group/erlbattle" title="EB:邮件列表" alt="" coords="277,299,379,328"/>
+<area shape="rect" href="http://groups.google.com/group/openbookproject" title="erlang&#45;china" alt="" coords="135,88,228,118"/>
+<area shape="rect" href="http://groups.google.com/group/ecug" title="ECUG" alt="" coords="29,88,101,118"/>
+</map>
